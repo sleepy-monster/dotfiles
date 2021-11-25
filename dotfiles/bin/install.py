@@ -3,6 +3,7 @@
 from os.path import expanduser
 import datetime
 import os
+import platform
 import subprocess
 import shutil
 import sys
@@ -47,10 +48,22 @@ def main():
 
                 os.symlink(n, link_path)
 
+    # Mac
+    if platform.system() == 'Darwin':
+        print(platform.system())
+
+    # Windows
+    if platform.system() == 'Windows':
+        print(platform.system())
+
+    # Linux
+    if platform.system() == 'Linux':
+        print(platform.system())
+
     # コマンド実行
     command = []
     command.append(['git', 'config', '--global', 'core.excludesfile',
-                    os.path.join(home, '.gitignore_global')])
+                    os.path.join(home, 'common/.gitignore_global')])
 
     for c in command:
         subprocess.call(c)
