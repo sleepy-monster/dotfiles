@@ -1,0 +1,6 @@
+alias ls='ls -GF'
+alias ll='ls -laGF'
+alias mv='mv -iv'
+alias rm='rm -iv'
+alias vi='vim'
+alias resh='exec /bin/zsh -l'
